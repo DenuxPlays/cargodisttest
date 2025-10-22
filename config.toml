@@ -1,0 +1,23 @@
+# The cron that defines when we check for a new IP address
+cron = "*/10 * * * * *" # Every 10 seconds
+
+[[domains]]
+
+    [domains.config.cloudflare]
+    # The cloudflare API token that will be used to authenticate with the API
+    auth_token="fWxepJS33UdIPTZoherycZhik1m--8bumZ2EK3-s"
+    # The cloudflare zone ID that will be used to identify the zone to update
+    zone_id="1ff5c08c9e8aa92753771e8641120d15"
+
+    [[domains.cloudflare]]
+    # The domain name that will be updated
+    name = "winchester.denux.dev"
+    # ttl (time to live) for the record
+    # for cloudflare, 1 = automatic
+    ttl = 1
+    # The type of record that will be updated
+    # Valid values are: A, AAAA
+    # In this case, we will update both A and AAAA records (IPv4 and IPv6 respectively)
+    type = ["A", "AAAA"]
+    # (cloudflare only) proxied = true if the record is proxied by cloudflare
+    proxied = false
