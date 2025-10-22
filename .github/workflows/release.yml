@@ -64,7 +64,7 @@ jobs:
         # we specify bash to get pipefail; it guards against the `curl` command
         # failing. otherwise `sh` won't catch that `curl` returned non-0
         shell: bash
-        run: "cargo install --git https://github.com/DenuxPlays/cargo-dist --branch=feature/freebsd-support --locked cargo-dist"
+        run: "cargo install --git https://github.com/DenuxPlays/cargo-dist --branch=feature/freebsd-support --locked dist"
       - name: Cache dist
         uses: actions/upload-artifact@v4
         with:
