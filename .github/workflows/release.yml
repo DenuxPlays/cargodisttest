@@ -132,7 +132,7 @@ jobs:
           key: ${{ join(matrix.targets, '-') }}
           cache-provider: ${{ matrix.cache_provider }}
       - name: Install dist
-        run: ${{ matrix.install_dist.run }}
+        run: "cargo install --git https://github.com/DenuxPlays/cargo-dist --branch=feature/freebsd-support --locked dist"
       # Get the dist-manifest
       - name: Fetch local artifacts
         uses: actions/download-artifact@v4
